@@ -13,7 +13,7 @@ A Home Assistant custom integration that connects to Cisco Webex to monitor your
 
 ## Prerequisites
 
-- Home Assistant 2023.3 or newer
+- Home Assistant 2026.1 or newer
 - A Webex account
 - A Webex integration created in the Webex Developer Portal
 
@@ -36,17 +36,12 @@ Fill in the integration details:
 1. **Integration Name**: Choose a name (e.g., "Home Assistant Webex")
 2. **Icon**: Upload an icon or use the default
 3. **Description**: Add a description (e.g., "Home Assistant integration for Webex status monitoring")
-4. **Redirect URI(s)**: This is critical. Add your Home Assistant callback URL:
+4. **Redirect URI(s)**: Add the standard Home Assistant callback URL:
    ```
-   https://<your-home-assistant-url>/auth/external/callback
+   https://my.home-assistant.io/redirect/oauth
    ```
 
-   Examples:
-   - If using Nabu Casa: `https://abcd1234.ui.nabu.casa/auth/external/callback`
-   - If using a custom domain: `https://homeassistant.yourdomain.com/auth/external/callback`
-   - For local testing: `http://homeassistant.local:8123/auth/external/callback`
-
-   **Important**: The URL must be HTTPS for cloud instances. HTTP only works for local development.
+   This will redirect you to a common Home Assistant page where you can enter your Home Assistant instance's specific URL.
 
 5. **Scopes**: Select the following scope:
    - `spark:people_read` - Required to read user profile and status information
@@ -66,7 +61,7 @@ After creating the integration, you'll be shown:
 1. Open HACS in your Home Assistant instance
 2. Click on "Integrations"
 3. Click the three dots in the top right and select "Custom repositories"
-4. Add this repository URL: `https://github.com/webex/webex-home-assistant`
+4. Add this repository URL: `https://github.com/waustin14/Webex-HA`
 5. Select category "Integration"
 6. Click "Add"
 7. Find "Webex" in the list and click "Download"
@@ -118,10 +113,6 @@ The integration creates the following entity:
   - `pending` - Status is pending
   - `presenting` - User is presenting
   - `unknown` - Status cannot be determined
-
-- **Attributes**:
-  - `display_name` - Your Webex display name
-  - `last_activity` - Timestamp of last activity
 
 ## Usage Examples
 
@@ -191,13 +182,13 @@ icon: mdi:video-account
 
 If you see a "redirect_uri_mismatch" error:
 1. Go to your Webex integration in the Developer Portal
-2. Verify the Redirect URI exactly matches: `https://<your-domain>/auth/external/callback`
+2. Verify the Redirect URI exactly matches: `https://my.home-assistant.io/redirect/oauth`
 3. Remove and re-add the integration in Home Assistant
 
 ## Support
 
 For issues, feature requests, or contributions:
-- GitHub Issues: [https://github.com/webex/webex-home-assistant/issues](https://github.com/webex/webex-home-assistant/issues)
+- GitHub Issues: [https://github.com/waustin14/Webex-HA/issues](https://github.com/waustin14/Webex-HA/issues)
 - Home Assistant Community: [https://community.home-assistant.io/](https://community.home-assistant.io/)
 
 ## License

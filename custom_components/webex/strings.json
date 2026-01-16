@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "pick_implementation": {
+        "title": "Pick Authentication Method"
+      }
+    },
+    "abort": {
+      "already_configured": "Account is already configured",
+      "already_in_progress": "Configuration flow is already in progress",
+      "oauth_error": "Received invalid token data",
+      "missing_configuration": "The component is not configured. Please follow the documentation."
+    },
+    "create_entry": {
+      "default": "Successfully authenticated with Webex"
+    }
+  }
+}

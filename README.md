@@ -114,6 +114,10 @@ The integration creates the following entity:
   - `presenting` - User is presenting
   - `unknown` - Status cannot be determined
 
+- **Attributes**:
+  - `display_name` - Your Webex display name
+  - `last_activity` - Timestamp of last activity
+
 ## Usage Examples
 
 ### Automation Example
